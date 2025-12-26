@@ -28,7 +28,7 @@ Refer to the following image for wiring and hardware setup:
 - Search for **ESP8266** and install it
 
 ### 3. Download the Controller App
-- [Bluino ESP8266 WiFi Robot Car App (Android)](https://play.google.com/store/apps/details?id=com.bluino.esp8266wifirobotcar&pli=1)
+- [ESP8266 WiFi Robot Car App (Android)](https://play.google.com/store/apps/details?id=com.bluino.esp8266wifirobotcar&pli=1)
 
 ### 4. Upload the Code
 - Use the provided `.ino` files:
