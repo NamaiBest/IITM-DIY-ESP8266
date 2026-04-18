@@ -1,11 +1,11 @@
-# Normal Wheel Bot (Normal DIY)
+# ESP Bot Normal DIY by [Namai](https://www.youtube.com/@-MRFUN)
 
 This version is the standard IITM DIY School Connect ESP8266 bot with one L298N motor driver and browser-based control.
 
 ## Files in This Folder
 - normal_wheel_bot.ino
-- connections.md
 - connection_diagram.jpg
+- web_ui_preview.svg
 
 ## Step-by-Step Guide
 1. Install Arduino IDE: https://www.arduino.cc/en/software
@@ -17,6 +17,24 @@ This version is the standard IITM DIY School Connect ESP8266 bot with one L298N 
 6. Connect phone to WiFi SSID: IITM-DIY-Normal (password: 12345678).
 7. Open browser and go to http://192.168.4.1
 8. Use the on-page control buttons and speed slider.
+
+## Which URL Students Should Open
+- Open exactly: http://192.168.4.1
+- This works because the ESP8266 is running in Wi-Fi Access Point mode, and its default AP IP is 192.168.4.1.
+- Root path is used, so students should open just http://192.168.4.1 (same as http://192.168.4.1/).
+- If the page does not open immediately, disable mobile data on the phone and reconnect to the IITM-DIY-Normal network.
+
+## How to Customize Wi-Fi Name, Password, and URL
+- In normal_wheel_bot.ino, edit:
+   - ssid (Wi-Fi network name shown to students)
+   - password (minimum 8 characters)
+- If you keep default AP settings, URL remains http://192.168.4.1.
+- If you set a custom AP IP in code with WiFi.softAPConfig(...), students must open that new IP instead.
+
+## Web Page Preview
+This is the control page students will see after opening the URL:
+
+![Normal Wheel Bot Web UI Preview](web_ui_preview.svg)
 
 
 ## Connections - Normal Wheel Bot

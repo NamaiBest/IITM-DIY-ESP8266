@@ -1,4 +1,4 @@
-# Single Motor Driver Mecanum
+# ESP Bot Single Motor Driver Mecanum by [Namai](https://www.youtube.com/@-MRFUN)
 
 This version uses one L298N with a mecanum chassis. It is controlled from a mobile-friendly web page and is ideal for a basic build.
 
@@ -6,8 +6,8 @@ Note: With a single driver, motion is similar to normal drive control (Forward, 
 
 ## Files in This Folder
 - single_motor_driver_mecanum.ino
-- connections.md
 - connection_diagram.jpg
+- web_ui_preview.svg
 
 ## Step-by-Step Guide
 1. Install Arduino IDE: https://www.arduino.cc/en/software
@@ -18,6 +18,24 @@ Note: With a single driver, motion is similar to normal drive control (Forward, 
 5. Upload code to ESP8266.
 6. Connect phone to WiFi SSID: IITM-DIY-Mecanum-1D (password: 12345678).
 7. Open browser and go to http://192.168.4.1
+
+## Which URL Students Should Open
+- Open exactly: http://192.168.4.1
+- This works because the ESP8266 is running in Wi-Fi Access Point mode, and its default AP IP is 192.168.4.1.
+- Root path is used, so students should open just http://192.168.4.1 (same as http://192.168.4.1/).
+- If the page does not open immediately, disable mobile data on the phone and reconnect to the IITM-DIY-Mecanum-1D network.
+
+## How to Customize Wi-Fi Name, Password, and URL
+- In single_motor_driver_mecanum.ino, edit:
+   - ssid (Wi-Fi network name shown to students)
+   - password (minimum 8 characters)
+- If you keep default AP settings, URL remains http://192.168.4.1.
+- If you set a custom AP IP in code with WiFi.softAPConfig(...), students must open that new IP instead.
+
+## Web Page Preview
+This is the control page students will see after opening the URL:
+
+![Single Driver Mecanum Web UI Preview](web_ui_preview.svg)
 
 ## Connection Diagram
 Same connection style as the normal DIY single-driver build:

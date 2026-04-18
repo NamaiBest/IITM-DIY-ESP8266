@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">ESP Bot Dual Motor Driver Mecanum by Namai - Web UI Preview</title>
+  <desc id="desc">Preview mockup of the Dual Motor Driver Mecanum browser control page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fcff"/>
+      <stop offset="100%" stop-color="#e4edf8"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b7285"/>
+      <stop offset="100%" stop-color="#0f8d98"/>
+    </linearGradient>
+    <linearGradient id="stop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect x="280" y="54" width="640" height="652" rx="24" fill="#ffffff" stroke="#d9e6f5" stroke-width="2"/>
+
+  <text x="600" y="108" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="34" fill="#172233">ESP Bot Dual Motor Driver Mecanum</text>
+  <a href="https://www.youtube.com/@-MRFUN">
+    <text x="600" y="138" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="19" fill="#0b5fd7" text-decoration="underline">by Namai</text>
+  </a>
+
+  <rect x="390" y="178" width="120" height="52" rx="12" fill="url(#btn)"/>
+  <text x="450" y="211" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">F-L</text>
+  <rect x="540" y="178" width="120" height="52" rx="12" fill="url(#btn)"/>
+  <text x="600" y="211" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Forward</text>
+  <rect x="690" y="178" width="120" height="52" rx="12" fill="url(#btn)"/>
+  <text x="750" y="211" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">F-R</text>
+
+  <rect x="390" y="246" width="210" height="52" rx="12" fill="url(#btn)"/>
+  <text x="495" y="279" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Strafe Left</text>
+  <rect x="600" y="246" width="210" height="52" rx="12" fill="url(#btn)"/>
+  <text x="705" y="279" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Strafe Right</text>
+
+  <rect x="390" y="314" width="120" height="52" rx="12" fill="url(#btn)"/>
+  <text x="450" y="347" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">B-L</text>
+  <rect x="540" y="314" width="120" height="52" rx="12" fill="url(#btn)"/>
+  <text x="600" y="347" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Backward</text>
+  <rect x="690" y="314" width="120" height="52" rx="12" fill="url(#btn)"/>
+  <text x="750" y="347" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">B-R</text>
+
+  <rect x="390" y="382" width="210" height="52" rx="12" fill="url(#btn)"/>
+  <text x="495" y="415" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Rotate Left</text>
+  <rect x="600" y="382" width="210" height="52" rx="12" fill="url(#btn)"/>
+  <text x="705" y="415" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Rotate Right</text>
+
+  <rect x="390" y="454" width="420" height="58" rx="12" fill="url(#stop)"/>
+  <text x="600" y="491" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="20" fill="#ffffff" font-weight="700">STOP</text>
+
+  <rect x="390" y="528" width="420" height="46" rx="10" fill="#eef3fa"/>
+  <text x="600" y="558" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="18" fill="#5f6f86">Ready</text>
+
+  <text x="600" y="624" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#5f6f86">Preview of the generated control page shown in browser</text>
+</svg>

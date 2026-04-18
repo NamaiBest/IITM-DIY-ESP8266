@@ -1,4 +1,4 @@
-# Dual Motor Driver Mecanum (Fully Functional)
+# ESP Bot Dual Motor Driver Mecanum (Fully Functional) by [Namai](https://www.youtube.com/@-MRFUN)
 
 This is the fully functional mecanum version with dual L298N motor drivers and browser control.
 
@@ -15,6 +15,7 @@ It is the ESP8266 conversion of your full mecanum control logic, including:
 ## Files in This Folder
 - mecanum_wheel_bot.ino
 - dual_mecanum_diagram.png
+- web_ui_preview.svg
 
 ## Step-by-Step Guide
 1. Install Arduino IDE: https://www.arduino.cc/en/software
@@ -25,6 +26,24 @@ It is the ESP8266 conversion of your full mecanum control logic, including:
 5. Upload code to ESP8266.
 6. Connect phone to WiFi SSID: IITM-DIY-Mecanum-2D (password: 12345678).
 7. Open browser and go to http://192.168.4.1
+
+## Which URL Students Should Open
+- Open exactly: http://192.168.4.1
+- This works because the ESP8266 is running in Wi-Fi Access Point mode, and its default AP IP is 192.168.4.1.
+- Root path is used, so students should open just http://192.168.4.1 (same as http://192.168.4.1/).
+- If the page does not open immediately, disable mobile data on the phone and reconnect to the IITM-DIY-Mecanum-2D network.
+
+## How to Customize Wi-Fi Name, Password, and URL
+- In mecanum_wheel_bot.ino, edit:
+   - ssid (Wi-Fi network name shown to students)
+   - password (minimum 8 characters)
+- If you keep default AP settings, URL remains http://192.168.4.1.
+- If you set a custom AP IP in code with WiFi.softAPConfig(...), students must open that new IP instead.
+
+## Web Page Preview
+This is the control page students will see after opening the URL:
+
+![Dual Driver Mecanum Web UI Preview](web_ui_preview.svg)
 
 ## Wiring (Merged Guide)
 

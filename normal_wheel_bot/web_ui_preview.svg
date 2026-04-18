@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">ESP Bot Normal DIY by Namai - Web UI Preview</title>
+  <desc id="desc">Preview mockup of the Normal Wheel Bot browser control page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6fbff"/>
+      <stop offset="100%" stop-color="#e3eef9"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#0a9487"/>
+    </linearGradient>
+    <linearGradient id="stop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9480f"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect x="310" y="70" width="580" height="620" rx="24" fill="#ffffff" stroke="#d8e4f3" stroke-width="2"/>
+
+  <text x="600" y="125" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="34" fill="#162033">ESP Bot Normal DIY</text>
+  <a href="https://www.youtube.com/@-MRFUN">
+    <text x="600" y="157" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="20" fill="#0b5fd7" text-decoration="underline">by Namai</text>
+  </a>
+
+  <rect x="560" y="205" width="80" height="56" rx="12" fill="url(#btn)"/>
+  <text x="600" y="241" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Forward</text>
+
+  <rect x="430" y="273" width="120" height="56" rx="12" fill="url(#btn)"/>
+  <text x="490" y="309" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Left</text>
+
+  <rect x="560" y="273" width="80" height="56" rx="12" fill="url(#stop)"/>
+  <text x="600" y="309" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Stop</text>
+
+  <rect x="650" y="273" width="120" height="56" rx="12" fill="url(#btn)"/>
+  <text x="710" y="309" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Right</text>
+
+  <rect x="560" y="341" width="80" height="56" rx="12" fill="url(#btn)"/>
+  <text x="600" y="377" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">Backward</text>
+
+  <rect x="390" y="430" width="420" height="180" rx="16" fill="#f9fbfe" stroke="#d8e4f3"/>
+  <text x="430" y="470" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="24" fill="#162033" font-weight="700">Speed</text>
+  <rect x="730" y="446" width="48" height="28" rx="14" fill="#1d4ed8"/>
+  <text x="754" y="467" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#ffffff" font-weight="700">5</text>
+  <line x1="430" y1="520" x2="770" y2="520" stroke="#6a7d96" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="600" cy="520" r="14" fill="#0f766e"/>
+  <rect x="430" y="548" width="340" height="40" rx="10" fill="#eef3fa"/>
+  <text x="600" y="574" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="18" fill="#5f6f85">Ready</text>
+
+  <text x="600" y="650" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Verdana" font-size="16" fill="#5f6f85">Preview of the generated control page shown in browser</text>
+</svg>
