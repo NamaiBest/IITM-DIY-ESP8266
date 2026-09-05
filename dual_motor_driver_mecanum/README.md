@@ -2,6 +2,8 @@
 
 This is the fully functional mecanum version with dual L298N motor drivers and browser control.
 
+#Video Link: https://youtu.be/Vmh1kLvfv5M?si=OpNa5lM1qMWQ8aRm
+
 All code in this repository is for ESP8266 builds (not ESP32).
 
 It is the ESP8266 conversion of your full mecanum control logic, including:
