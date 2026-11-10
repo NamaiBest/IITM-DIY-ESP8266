@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="30" viewBox="0 0 132 30">
+  <rect width="132" height="30" rx="7" fill="#23262d"/>
+  <rect x="8" y="7" width="23" height="16" rx="5" fill="#e71929"/>
+  <path d="M17 11l7 4-7 4z" fill="white"/>
+  <text x="39" y="20" fill="white" font-family="Arial,sans-serif" font-size="12" font-weight="700">More projects</text>
+</svg>

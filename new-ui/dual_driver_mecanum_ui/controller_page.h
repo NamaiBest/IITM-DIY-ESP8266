@@ -1,0 +1,281 @@
+// Generated from controller.html by embed_controller.py.
+#pragma once
+
+const char INDEX_HTML[] PROGMEM = R"controller(
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="IITM DIY School Connect browser controller for the ESP8266 dual-driver mecanum bot.">
+<link rel="icon" href="data:,">
+<title>IITM DIY · Mecanum Controller</title>
+<style>
+:root {
+  color-scheme: dark;
+  font: 16px/1.5 system-ui, sans-serif;
+  background: #101521;
+  color: #f4f6fc;
+  --muted: #b4bfd5;
+  --accent: #a3f0ce;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 4vw, 36px);
+  background: radial-gradient(ellipse at 50% 12%, #253650, transparent 68%), #101521;
+}
+main {
+  width: min(100%, 620px);
+  padding: clamp(14px, 4vw, 32px);
+  border: 1px solid #3b4a64;
+  border-radius: clamp(22px, 5vw, 38px);
+  background: linear-gradient(145deg, #29354b, #1a2435 55%);
+  box-shadow: 0 18px 40px #080d1880, inset 0 1px #ffffff12;
+}
+header, footer, .panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.eyebrow, .mode, .panel-heading h2, .telemetry dt {
+  margin: 0;
+  font: 700 .68rem/1.5 ui-monospace, monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.eyebrow { color: var(--accent); }
+h1 { margin: 2px 0 0; font-size: clamp(1.45rem, 5vw, 2.3rem); line-height: 1.1; letter-spacing: -.035em; }
+.mode {
+  padding: 5px 9px;
+  border: 1px solid #4c607c;
+  border-radius: 20px;
+  color: #d7e3fa;
+}
+.mode::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.telemetry {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 18px 0 12px;
+  border-radius: 13px;
+  border: 1px solid #3b4a64;
+  background: #141e2e;
+}
+.telemetry dt { color: var(--muted); }
+.telemetry dd { margin: 2px 0 0; font-size: .9rem; font-weight: 700; }
+#status { color: var(--accent); }
+#status.error { color: #ffaca7; }
+.controls { padding: clamp(10px, 3vw, 20px); border-radius: 18px; background: #111a29; }
+.panel-heading { margin: 0 0 10px; color: var(--muted); }
+.panel-heading span { font-size: .73rem; }
+.dpad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.rotation { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+button {
+  min-width: 0;
+  min-height: 58px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 3px;
+  padding: 6px 3px;
+  border: 1px solid #4b5d7b;
+  border-radius: 12px;
+  background: linear-gradient(#31415c, #24334a);
+  box-shadow: 0 2px #0a101a;
+  color: inherit;
+  font: 650 clamp(.64rem, 2.4vw, .8rem)/1.15 system-ui, sans-serif;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+}
+button span { font-size: 1.45rem; line-height: 1; }
+@media (hover: hover) { button:hover { border-color: #91a9cb; } }
+button:focus-visible, a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+button.active {
+  background: var(--accent);
+  color: #132e2a;
+  border-color: var(--accent);
+  box-shadow: none;
+  transform: translateY(2px);
+}
+.stop { background: #822e40; border-color: #b95c6d; color: #fff1f3; }
+.stop:active { background: #a7344b; }
+.rotation button { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 48px; }
+footer { margin-top: 14px; color: var(--muted); font-size: .75rem; }
+footer p { margin: 0; }
+footer a { display: inline-flex; gap: 6px; align-items: center; color: inherit; }
+footer svg { flex: none; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <p class="eyebrow">IITM DIY School Connect</p>
+      <h1>Mecanum Controller</h1>
+    </div>
+    <span class="mode" id="mode">Preview</span>
+  </header>
+
+  <dl class="telemetry">
+    <div><dt>Drive system</dt><dd>Dual L298N</dd></div>
+    <div><dt>Movement</dt><dd id="status" role="status">Ready</dd></div>
+  </dl>
+
+  <section class="controls" aria-labelledby="drive-title">
+    <div class="panel-heading">
+      <h2 id="drive-title">Directional pad</h2>
+      <span>Hold to drive · Release to stop</span>
+    </div>
+    <div class="dpad">
+      <button type="button" data-move="FL"><span aria-hidden="true">↖</span>Forward left</button>
+      <button type="button" data-move="F"><span aria-hidden="true">↑</span>Forward</button>
+      <button type="button" data-move="FR"><span aria-hidden="true">↗</span>Forward right</button>
+      <button type="button" data-move="SL"><span aria-hidden="true">←</span>Strafe left</button>
+      <button type="button" class="stop" id="stop"><span aria-hidden="true">■</span>STOP</button>
+      <button type="button" data-move="SR"><span aria-hidden="true">→</span>Strafe right</button>
+      <button type="button" data-move="BL"><span aria-hidden="true">↙</span>Back left</button>
+      <button type="button" data-move="B"><span aria-hidden="true">↓</span>Reverse</button>
+      <button type="button" data-move="BR"><span aria-hidden="true">↘</span>Back right</button>
+    </div>
+    <div class="rotation" role="group" aria-label="Rotation">
+      <button type="button" data-move="RL"><span aria-hidden="true">↺</span>Rotate left</button>
+      <button type="button" data-move="RR"><span aria-hidden="true">↻</span>Rotate right</button>
+    </div>
+  </section>
+
+  <footer>
+    <p id="hint">Preview only · No commands sent</p>
+    <a href="https://www.youtube.com/@-MRFUN" target="_blank" rel="noopener noreferrer">
+      <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true">
+        <rect width="20" height="14" rx="4" fill="#e71929"/>
+        <path d="m8 4 5 3-5 3z" fill="#fff"/>
+      </svg>
+      More projects on YouTube
+    </a>
+  </footer>
+</main>
+<script>
+const live = true; // The sketch generator enables live mode in the embedded copy.
+const statusEl = document.querySelector('#status');
+const stop = document.querySelector('#stop');
+let active = null;
+let input = null;
+let desiredMove = 'S';
+let inFlight = false;
+
+if (live) {
+  document.querySelector('#mode').textContent = 'Bot Wi-Fi';
+  document.querySelector('#hint').textContent = 'Arrow keys to drive · Esc to stop';
+}
+
+async function sendMove() {
+  if (!live || inFlight) return;
+
+  const move = desiredMove;
+  inFlight = true;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 600);
+  try {
+    const response = await fetch('/cmd?move=' + move, {
+      cache: 'no-store',
+      signal: controller.signal
+    });
+    if (!response.ok) throw new Error('Command failed');
+  } catch {
+    setMovement(null);
+    statusEl.textContent = 'Connection lost';
+    statusEl.classList.add('error');
+  } finally {
+    clearTimeout(timeout);
+    inFlight = false;
+    if (move !== desiredMove) sendMove();
+  }
+}
+
+function setMovement(button, source = null) {
+  active?.classList.remove('active');
+  active = button;
+  input = source;
+  active?.classList.add('active');
+  desiredMove = active?.dataset.move ?? 'S';
+  statusEl.textContent = active?.lastChild.textContent.trim() ?? 'Stopped';
+  statusEl.classList.remove('error');
+}
+
+function begin(button, source) {
+  if (active) return;
+  setMovement(button, source);
+  sendMove();
+}
+
+function halt() {
+  setMovement(null);
+  sendMove();
+}
+
+document.querySelectorAll('[data-move]').forEach(button => {
+  button.addEventListener('pointerdown', event => {
+    if (event.button !== 0 || active) return;
+    event.preventDefault();
+    button.focus({ preventScroll: true });
+    button.setPointerCapture(event.pointerId);
+    begin(button, event.pointerId);
+  });
+  for (const name of ['pointerup', 'pointercancel', 'lostpointercapture']) {
+    button.addEventListener(name, event => {
+      if (input === event.pointerId) halt();
+    });
+  }
+});
+
+const arrows = { ArrowUp: 'F', ArrowLeft: 'SL', ArrowRight: 'SR', ArrowDown: 'B' };
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    halt();
+    return;
+  }
+  const move = arrows[event.key];
+  const button = move
+    ? document.querySelector('[data-move="' + move + '"]')
+    : [' ', 'Enter'].includes(event.key) && event.target.matches?.('[data-move]')
+      ? event.target
+      : null;
+  if (!button) return;
+  event.preventDefault();
+  if (!event.repeat) begin(button, event.code);
+});
+document.addEventListener('keyup', event => {
+  if (input === event.code) halt();
+});
+document.addEventListener('focusin', event => {
+  if (active && typeof input === 'string' && event.target !== active) halt();
+});
+stop.addEventListener('pointerdown', event => {
+  if (event.button === 0) halt();
+});
+stop.addEventListener('click', halt);
+window.addEventListener('blur', () => { if (active) halt(); });
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden && active) halt();
+});
+if (live) setInterval(() => { if (active) sendMove(); }, 200);
+</script>
+</body>
+</html>
+)controller";
