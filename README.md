@@ -14,6 +14,11 @@ Build a robot car with a NodeMCU ESP8266 and L298N motor drivers, then drive it 
 
 ## New controller UI
 
+The dual-driver mecanum bot has **two control options** with the [new controller sketch](new-ui/). Both use the bot's **IITM-DIY-Mecanum-UI** Wi-Fi network.
+
+- **Web UI.** Open [192.168.4.1](http://192.168.4.1/) in a browser on your phone or computer.
+- **Android app (APK).** [Download and install IITM DIY Controller](https://github.com/NamaiBest/IITM-DIY-ESP8266/releases/download/android-v1.0.0/iitm-diy-controller.apk) on Android 8.0 or later, then open the app. See the [Android setup guide](android/) for installation steps.
+
 The [new controller UI](new-ui/) uses the dual-driver mecanum wiring and adds a gamepad layout with a center Stop button, separate rotation controls, and movement feedback. Hold a direction to drive and release it to stop. You can also drive with the arrow keys.
 
 [Download the interactive preview](new-ui/dual_driver_mecanum_ui/controller.html) and open it in a browser to try the controls without a bot. See the [new UI guide](new-ui/) to upload it to your ESP8266.
@@ -22,17 +27,13 @@ The [new controller UI](new-ui/) uses the dual-driver mecanum wiring and adds a 
 | --- | --- |
 | [![Desktop preview of the new mecanum controller](new-ui/screenshots/desktop.png)](new-ui/screenshots/desktop.png) | [![Phone preview with the forward control held](new-ui/screenshots/phone.png)](new-ui/screenshots/phone.png) |
 
-## Android app
-
-Install [IITM DIY Controller](https://github.com/NamaiBest/IITM-DIY-ESP8266/releases/download/android-v1.0.0/iitm-diy-controller.apk) on Android 8.0 or later. Upload the [new controller sketch](new-ui/), join **IITM-DIY-Mecanum-UI** in your phone's Wi-Fi settings, and open the app. See the [Android setup guide](android/) for installation and build steps.
-
 ## Set up the ESP8266
 
 1. Install the [Arduino IDE](https://www.arduino.cc/en/software).
 2. In **Preferences → Additional Boards Manager URLs**, add the [ESP8266 board package URL](https://arduino.esp8266.com/stable/package_esp8266com_index.json).
 3. Install **esp8266** in Boards Manager. See the [ESP8266 installation guide](https://arduino-esp8266.readthedocs.io/en/latest/installing.html) for details.
 4. Download the repository and keep each sketch in its named folder. Follow the build guide to wire the bot, select **NodeMCU 1.0 (ESP-12E Module)**, and upload the sketch.
-5. Join the Wi-Fi network listed in your guide, then open the controller in your browser.
+5. Join the Wi-Fi network listed in your guide, then open the Web UI or use the Android app with the new dual-driver sketch.
 
 [NodeMCU ESP8266 pinout](assets/nodemcu-esp8266-pinout.png) · [Download the repository ZIP](https://github.com/NamaiBest/IITM-DIY-ESP8266/archive/refs/heads/main.zip)
 

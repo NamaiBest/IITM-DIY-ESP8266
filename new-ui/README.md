@@ -15,8 +15,15 @@ Download [controller.html](dual_driver_mecanum_ui/controller.html) and open it i
 1. Follow the [ESP8266 setup guide](../README.md#set-up-the-esp8266) and the [dual-driver wiring guide](../builds/dual_driver_mecanum/#wiring).
 2. Keep the [`dual_driver_mecanum_ui` folder](dual_driver_mecanum_ui/) together and open [`dual_driver_mecanum_ui.ino`](dual_driver_mecanum_ui/dual_driver_mecanum_ui.ino) in Arduino IDE.
 3. Select **NodeMCU 1.0 (ESP-12E Module)** and the board's USB port, then upload.
-4. Join **`IITM-DIY-Mecanum-UI`** with password **`12345678`** and open [the bot controller](http://192.168.4.1/).
-5. Hold a direction to drive and release it to stop. Use the arrow keys for forward, reverse, and strafing. Hold Space or Enter on a focused direction button for any move. Press **Esc** or **Stop** to halt.
+4. Join **`IITM-DIY-Mecanum-UI`** with password **`12345678`**.
+5. Choose one of the [two control options](#choose-how-to-control-the-bot).
+
+## Choose how to control the bot
+
+- **Web UI.** Open [192.168.4.1](http://192.168.4.1/) in a browser on your phone or computer.
+- **Android app (APK).** [Download and install IITM DIY Controller](https://github.com/NamaiBest/IITM-DIY-ESP8266/releases/download/android-v1.0.0/iitm-diy-controller.apk) on Android 8.0 or later, then open the app. See the [Android setup guide](../android/) for installation steps.
+
+Hold a direction to drive and release it to stop. Use the arrow keys for forward, reverse, and strafing. Hold Space or Enter on a focused direction button for any move. Press **Esc** or **Stop** to halt.
 
 The board stops the motors after 850 ms without a movement command. The controller refreshes the command while a direction is held.
 

@@ -2,6 +2,8 @@
 
 The app bundles the [new controller UI](../new-ui/) and sends movement commands over Wi-Fi to the ESP8266. It requires Android 8.0 or later and an up-to-date Android System WebView.
 
+The new dual-driver sketch supports two control options over the same bot Wi-Fi. Use the **Web UI** at [192.168.4.1](http://192.168.4.1/) in a browser, or install the **Android app (APK)** using the steps below.
+
 ## Install and drive
 
 1. Upload the [new controller sketch](../new-ui/) to the dual-driver mecanum bot.
