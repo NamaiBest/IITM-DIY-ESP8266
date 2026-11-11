@@ -22,6 +22,10 @@ The [new controller UI](new-ui/) uses the dual-driver mecanum wiring and adds a 
 | --- | --- |
 | [![Desktop preview of the new mecanum controller](new-ui/screenshots/desktop.png)](new-ui/screenshots/desktop.png) | [![Phone preview with the forward control held](new-ui/screenshots/phone.png)](new-ui/screenshots/phone.png) |
 
+## Android app
+
+Install [IITM DIY Controller](https://github.com/NamaiBest/IITM-DIY-ESP8266/releases/download/android-v1.0.0/iitm-diy-controller.apk) on Android 8.0 or later. Upload the [new controller sketch](new-ui/), join **IITM-DIY-Mecanum-UI** in your phone's Wi-Fi settings, and open the app. See the [Android setup guide](android/) for installation and build steps.
+
 ## Set up the ESP8266
 
 1. Install the [Arduino IDE](https://www.arduino.cc/en/software).
